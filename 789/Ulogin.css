@@ -1,0 +1,606 @@
+/* navbar */
+/* desktop mode */
+/* 桌面模式 */
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+  display: none;
+}
+
+.navbar {
+  box-shadow: 0px 3px 10px 0px #aaa; /* 陰影 */
+  width: 100%; /* 寬度 */
+  background: #fff; /* 背景顏色 */
+  color: #000080; /* 字體顏色 */
+  opacity: 0.85; /* 透明度 */
+  height: 80px; /* 高度 */
+  z-index: 12; /* 疊層 */
+}
+
+.navbar-container {
+  display: flex; /* 使內容物並排 */
+  justify-content: space-between; /* 使內容物靠左靠右 */ /* 使內容物靠左靠右 */
+  height: 70px; /* 高度 */
+  align-items: center; /* 使內容物垂直置中 */
+}
+
+.menu-items {
+  order: 2; /* 使內容物靠右 */
+  display: flex; /* 使內容物並排 */
+}
+
+.menu-items li {
+  list-style: none; /* 去除項目符號 */
+  margin-left: 40px; /* 項目間距 */
+  margin-top: 10px; /* 項目間距 */
+  font-size: 1.2rem; /* 字體大小 */
+}
+
+.menu-items a {
+  text-decoration: none; /* 去除底線 */
+  color: #444; /* 字體顏色 */
+  font-weight: 500; /* 字體粗細 */
+  font-size: 24px;
+  transition: color 0.3s ease-in-out; /* 顏色變化動畫 */
+}
+
+.menu-items a:hover {
+  color: orange; /* 字體顏色 */
+  transition: color 0.1s ease-in-out; /* 顏色變化動畫 */
+}
+
+.navbar {
+  opacity: 0.95; /* 透明度 */
+}
+
+.navbar-container input[type="checkbox"],
+.navbar-container .hamburger-lines {
+  display: block; /* 顯示 */
+}
+
+.navbar-container {
+  display: block; /* 使內容物並排 */
+  position: relative; /* 使內容物相對定位 */ 
+  height: 64px; /* 高度 */
+}
+
+.navbar-container input[type="checkbox"] {
+  position: absolute; /* 使內容物相對定位 */
+  display: block; /* 顯示 */
+  height: 32px; /* 高度 */
+  width: 30px; /* 寬度 */
+  top: 20px;  /* 項目間距 */
+  left: 20px;  /* 項目間距 */
+  z-index: 5; /* 疊層 */
+  opacity: 0; /* 透明度 */
+}
+
+.navbar-container .hamburger-lines {
+  display: block; /* 顯示 */
+  height: 23px; /* 高度 */
+  width: 35px; /* 寬度 */
+  position: absolute; /* 使內容物相對定位 */
+  top: 17px; /* 項目間距 */
+  left: 20px; /* 項目間距 */
+  z-index: 2; /* 疊層 */
+  display: flex; /* 使內容物並排 */
+  flex-direction: column; /* 使內容物垂直排列 */
+  justify-content: space-between; /* 使內容物靠左靠右 */
+}
+
+.navbar-container .hamburger-lines .line {
+  display: block; /* 顯示 */
+  height: 4px; /* 高度 */
+  width: 100%; /* 寬度 */
+  border-radius: 10px; /* 圓角 */
+  background: #333; /* 背景顏色 */
+}
+
+.navbar-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%; /* 使旋轉中心在左上角 */
+  transition: transform 0.4s ease-in-out; /* 旋轉動畫 */
+}
+
+.navbar-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out; /* 旋轉動畫 */
+}
+
+.navbar-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%; /* 使旋轉中心在左下角 */
+  transition: transform 0.4s ease-in-out; /* 旋轉動畫 */
+}
+
+.navbar .menu-items {
+  padding-top: 100px; /* 項目間距 */
+  background: #fff; /* 背景顏色 */
+  height: 100vh; /* 高度 */
+  max-width: 300px; /* 寬度 */
+  transform: translate(-300%); /* 使內容物向左移動 */
+  display: flex; /* 使內容物並排 */
+  flex-direction: column; /* 使內容物垂直排列 */
+  margin-left: -40px; /* 項目間距 */
+  padding-left: 20px; /* 項目間距 */
+  transition: transform 0.5s ease-in-out; /* 位移動畫 */
+  box-shadow: 3px 0px 10px 0px #aaa; /* 陰影 */
+}
+
+.navbar .menu-items li {
+  margin-bottom: 10px; /* 項目間距 */
+  margin-right: 60px; /* 項目間距 */ 
+  font-size: 24px; /* 字體大小 */
+  font-weight: 500; /* 字體粗細 */
+}
+
+.logo {
+  position: absolute; /* 使內容物相對定位 */ 
+  text-align: center; /* 使內容物置中 */
+  top: 7px; /* 項目間距 */
+  left: 70px; /* 項目間距 */
+  right: 10px; /* 項目間距 */
+  font-size: 42px; /* 字體大小 */
+  font-weight: bold; /* 字體粗細 */
+}
+
+.navbar-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0); /* 使內容物向右移動 */
+}
+
+.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(35deg); /* 旋轉 */
+}
+
+.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);     /* 使內容物縮放 */
+}
+
+.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-35deg); /* 旋轉 */
+}
+/* ......../ media query /.......... */
+
+@media (min-width: 770px) and (max-width: 1200px) {
+
+    .navbar-container {
+        display: flex; /* 使內容物並排 */
+        justify-content: space-between; /* 使內容物靠左靠右 */ /* 使內容物靠左靠右 */
+        height: 70px; /* 高度 */
+        align-items: center; /* 使內容物垂直置中 */
+    }
+    
+    .menu-items {
+        order: 2; /* 使內容物靠右 */
+        display: flex; /* 使內容物並排 */
+        margin-right: 25px; /* 項目間距 */
+    }
+
+    .menu-items a{
+        font-size: 20px; /* 字體大小 */
+        font-weight: 500; /* 字體粗細 */
+    }
+
+    .navbar {
+      opacity: 0.95; /* 透明度 */
+    }
+  
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines {
+      display: block; /* 顯示 */
+    }
+  
+    .navbar-container {
+      display: block; /* 使內容物並排 */
+      position: relative; /* 使內容物相對定位 */ 
+      height: 64px; /* 高度 */
+    }
+  
+    .navbar-container input[type="checkbox"] {
+      position: absolute; /* 使內容物相對定位 */
+      display: block; /* 顯示 */
+      height: 32px; /* 高度 */
+      width: 30px; /* 寬度 */
+      top: 20px;  /* 項目間距 */
+      left: 20px;  /* 項目間距 */
+      z-index: 5; /* 疊層 */
+      opacity: 0; /* 透明度 */
+    }
+  
+    .navbar-container .hamburger-lines {
+      display: block; /* 顯示 */
+      height: 23px; /* 高度 */
+      width: 35px; /* 寬度 */
+      position: absolute; /* 使內容物相對定位 */
+      top: 17px; /* 項目間距 */
+      left: 20px; /* 項目間距 */
+      z-index: 2; /* 疊層 */
+      display: flex; /* 使內容物並排 */
+      flex-direction: column; /* 使內容物垂直排列 */
+      justify-content: space-between; /* 使內容物靠左靠右 */
+    }
+  
+    .navbar-container .hamburger-lines .line {
+      display: block; /* 顯示 */
+      height: 4px; /* 高度 */
+      width: 100%; /* 寬度 */
+      border-radius: 10px; /* 圓角 */
+      background: #333; /* 背景顏色 */
+    }
+  
+    .navbar-container .hamburger-lines .line1 {
+      transform-origin: 0% 0%; /* 使旋轉中心在左上角 */
+      transition: transform 0.4s ease-in-out; /* 旋轉動畫 */
+    }
+  
+    .navbar-container .hamburger-lines .line2 {
+      transition: transform 0.2s ease-in-out; /* 旋轉動畫 */
+    }
+  
+    .navbar-container .hamburger-lines .line3 {
+      transform-origin: 0% 100%; /* 使旋轉中心在左下角 */
+      transition: transform 0.4s ease-in-out; /* 旋轉動畫 */
+    }
+  
+    .navbar .menu-items {
+      padding-top: 100px; /* 項目間距 */
+      background: #fff; /* 背景顏色 */
+      height: 100vh; /* 高度 */
+      max-width: 300px; /* 寬度 */
+      transform: translate(-200%); /* 使內容物向左移動 */
+      display: flex; /* 使內容物並排 */
+      flex-direction: column; /* 使內容物垂直排列 */
+      margin-left: -40px; /* 項目間距 */
+      padding-left: 20px; /* 項目間距 */
+      transition: transform 0.5s ease-in-out; /* 位移動畫 */
+      box-shadow: 3px 0px 10px 0px #aaa; /* 陰影 */
+    }
+  
+    .navbar .menu-items li {
+      margin-bottom: 10px; /* 項目間距 */
+      margin-right: 60px; /* 項目間距 */ 
+      font-size: 24px; /* 字體大小 */
+      font-weight: 500; /* 字體粗細 */
+    }
+  
+    .logo {
+      position: absolute; /* 使內容物相對定位 */ 
+      text-align: center; /* 使內容物置中 */
+      top: 7px; /* 項目間距 */
+      left: 70px; /* 項目間距 */
+      right: 10px; /* 項目間距 */
+      font-size: 32px; /* 字體大小 */
+      font-weight: bold; /* 字體粗細 */
+    }
+  
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+      transform: translateX(0); /* 使內容物向右移動 */
+    }
+  
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+      transform: rotate(35deg); /* 旋轉 */
+    }
+  
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+      transform: scaleY(0);     /* 使內容物縮放 */
+    }
+  
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+      transform: rotate(-35deg); /* 旋轉 */
+    }
+
+}
+
+@media (max-width: 770px) {
+    .navbar {
+      opacity: 0.95; /* 透明度 */
+    }
+  
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines {
+      display: block; /* 顯示 */
+    }
+  
+    .navbar-container {
+      display: block; /* 使內容物並排 */
+      position: relative; /* 使內容物相對定位 */ 
+      height: 64px; /* 高度 */
+    }
+  
+    .navbar-container input[type="checkbox"] {
+      position: absolute; /* 使內容物相對定位 */
+      display: block; /* 顯示 */
+      height: 32px; /* 高度 */
+      width: 30px; /* 寬度 */
+      top: 20px;  /* 項目間距 */
+      left: 20px;  /* 項目間距 */
+      z-index: 5; /* 疊層 */
+      opacity: 0; /* 透明度 */
+    }
+  
+    .navbar-container .hamburger-lines {
+      display: block; /* 顯示 */
+      height: 23px; /* 高度 */
+      width: 35px; /* 寬度 */
+      position: absolute; /* 使內容物相對定位 */
+      top: 17px; /* 項目間距 */
+      left: 20px; /* 項目間距 */
+      z-index: 2; /* 疊層 */
+      display: flex; /* 使內容物並排 */
+      flex-direction: column; /* 使內容物垂直排列 */
+      justify-content: space-between; /* 使內容物靠左靠右 */
+    }
+  
+    .navbar-container .hamburger-lines .line {
+      display: block; /* 顯示 */
+      height: 4px; /* 高度 */
+      width: 100%; /* 寬度 */
+      border-radius: 10px; /* 圓角 */
+      background: #333; /* 背景顏色 */
+    }
+  
+    .navbar-container .hamburger-lines .line1 {
+      transform-origin: 0% 0%; /* 使旋轉中心在左上角 */
+      transition: transform 0.4s ease-in-out; /* 旋轉動畫 */
+    }
+  
+    .navbar-container .hamburger-lines .line2 {
+      transition: transform 0.2s ease-in-out; /* 旋轉動畫 */
+    }
+  
+    .navbar-container .hamburger-lines .line3 {
+      transform-origin: 0% 100%; /* 使旋轉中心在左下角 */
+      transition: transform 0.4s ease-in-out; /* 旋轉動畫 */
+    }
+  
+    .navbar .menu-items {
+      padding-top: 100px; /* 項目間距 */
+      background: #fff; /* 背景顏色 */
+      height: 100vh; /* 高度 */
+      max-width: 300px; /* 寬度 */
+      transform: translate(-200%); /* 使內容物向左移動 */
+      display: flex; /* 使內容物並排 */
+      flex-direction: column; /* 使內容物垂直排列 */
+      margin-left: -40px; /* 項目間距 */
+      padding-left: 20px; /* 項目間距 */
+      transition: transform 0.5s ease-in-out; /* 位移動畫 */
+      box-shadow: 3px 0px 10px 0px #aaa; /* 陰影 */
+    }
+  
+    .navbar .menu-items li {
+      margin-bottom: 10px; /* 項目間距 */
+      margin-right: 60px; /* 項目間距 */ 
+      font-size: 24px; /* 字體大小 */
+      font-weight: 500; /* 字體粗細 */
+    }
+  
+    .logo {
+      position: absolute; /* 使內容物相對定位 */ 
+      text-align: center; /* 使內容物置中 */
+      top: 20%; /* 項目間距 */
+      font-size: 24px; /* 字體大小 */
+      font-weight: bold; /* 字體粗細 */
+    }
+  
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+      transform: translateX(0); /* 使內容物向右移動 */
+    }
+  
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+      transform: rotate(35deg); /* 旋轉 */
+    }
+  
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+      transform: scaleY(0);     /* 使內容物縮放 */
+    }
+  
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+      transform: rotate(-35deg); /* 旋轉 */
+    }
+    }
+    
+@media (max-width: 511px){
+  .logo{
+    top: 10%; /* 項目間距 */
+  }
+}
+
+
+/*登入畫面*/
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; /* Firefox */
+  -webkit-box-sizing: border-box; /* Safari */
+  box-sizing: border-box; /* 設定寬度與高度不包含邊框(border)與填充(padding) */
+}
+
+form {
+  max-width: 300px; /* 寬度 */
+  margin: 40px auto; /* 項目間距 */
+  padding: 20px 50px; /* 項目間距 */
+  background-image: linear-gradient(#f7f6dc 97%,#b1d7b4 3%) ; /* 背景顏色 */
+  border-radius: 10px; /* 圓角 */
+  margin-top: 50px; /* 項目間距 */
+  margin-bottom: 50px; /* 項目間距 */
+}
+
+h2 {
+  margin: 0 0 30px 0; /* 項目間距 */
+  text-align: center; /* 使內容物置中 */
+  font-size: 60px;  /* 字體大小 */
+  color: #4e9f3d; /* 字體顏色 */
+  font-weight: bold; /* 字體粗細 */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1); /* 背景顏色 */
+  border: none; /* 邊框 */
+  font-size: 20px; /* 字體大小 */
+  height: auto; /* 高度 */
+  margin: 0; /* 項目間距 */
+  outline: 0; /* 取消外框 */
+  padding: 15px; /* 項目間距 */
+  width: 100%; /* 寬度 */
+  background-color: white; /* 背景顏色 */
+  border-radius: 30px; /* 圓角 */
+  color: #8a97a0; /* 字體顏色 */
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset; /* 陰影 */
+  margin-bottom: 30px; /* 項目間距 */
+  padding: 10px; /* 項目間距 */
+}
+
+input[type="radio"] {
+  margin: 4px 4px 8px 4px; /* 項目間距 */
+}
+
+button{
+  padding: 7px 10px 5px 10px; /* 項目間距 */
+  color: black; /* 字體顏色 */
+  background-color: #b1d7b4; /* 背景顏色 */
+  font-size: 24px; /* 字體大小 */
+  text-align: center; /* 使內容物置中 */
+  font-style: normal; /* 字體樣式 */
+  border-radius: 30px; /* 圓角 */
+  width: 50%; /* 寬度 */
+  border: 1px solid #b1d7b4; /* 邊框 */
+  margin-bottom: 40px; /* 項目間距 */
+  margin-left: 25%; /* 項目間距 */
+}
+
+button:hover {
+  background-color: #4e9f3d; /* 背景顏色 */
+  color: white; /* 字體顏色 */
+  border: 1px solid #4e9f3d; /* 邊框 */
+}
+
+fieldset {
+  margin-bottom: 30px; /* 項目間距 */
+  border: none; /* 邊框 */
+}
+
+legend {
+  font-size: 1.4em; /* 字體大小 */
+  margin-bottom: 15px; /* 項目間距 */
+}
+
+label {
+  display: block; 
+  margin-bottom: 8px; /* 項目間距 */
+}
+
+label.light {
+  font-weight: 500; /* 字體粗細 */
+  display: inline; 
+  font-size: 20px; /* 字體大小 */
+  justify-content: space-evenly;
+  margin-right: 5%; /* 項目間距 */
+}
+
+.number {
+  background-color: #5fcf80; /* 背景顏色 */
+  color: white; /* 字體顏色 */
+  height: 30px; /* 高度 */
+  width: 30px; /* 寬度 */
+  display: inline-block; 
+  font-size: 0.8em; /* 字體大小 */
+  margin-right: 10px; /* 項目間距 */
+  line-height: 30px; /* 行高 */
+  text-align: center; /* 使內容物置中 */
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2); /* 文字陰影 */
+  border-radius: 100%; /* 圓角 */
+}
+
+@media screen and (min-width: 480px) {
+
+  form {
+    max-width: 480px;
+  }
+
+}
+
+@media (max-width: 770px ) {
+
+  h2{
+    font-size: 40px;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 20px;
+  }
+
+  legend {
+    font-size: 1.2em;
+  }
+
+  .number{
+    height: 20px;
+    width: 20px;
+    font-size: 0.6em;
+    line-height: 20px;
+  }
+
+  label.light {
+    font-weight: 500; /* 字體粗細 */
+    display: inline; 
+    font-size: 16px; /* 字體大小 */
+    justify-content: space-evenly;
+    margin-right: 3%; /* 項目間距 */
+  }
+}
+
+@media (max-width: 479px ) {
+  h2{
+    font-size: 32px;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea,
+  select {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+
+  label.light {
+    font-weight: 500; /* 字體粗細 */
+    display: inline; 
+    font-size: 16px; /* 字體大小 */
+    justify-content: space-evenly;
+    margin-right: 3%; /* 項目間距 */
+  }
+}
+        
