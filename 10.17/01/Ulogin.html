@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
+    <title>後台登入</title>
+    <link rel="stylesheet" href="Ulogin.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container container">
+                <input type="checkbox">
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <ul class="menu-items">
+                    <li><a href="Ulogin.html">後台登入</a></li>
+                </ul>
+                <h1 class="logo">水中菜園奇幻之旅：魚你一起 活出精菜</h1>
+            </div>
+        </nav>
+    </header>
+    
+    <form id=myForm action="user-list.html" method="post">
+
+        <h2>後台登入</h2>
+
+            <fieldset>
+                <label for="account">帳號</label>
+                <input type="text" id="account" name="user_account" placeholder="請輸入帳號" oninput="checkVaild(this, '請輸入帳號');" required="required" minlength="2"/>
+                
+                <label for="password">密碼</label>
+                <input type="password" id="password" name="user_password" placeholder="格式:含英數至少六個字元" pattern="^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$" oninput="checkVaild(this, '含英數至少六個字元');" required="required"/>
+            </fieldset>
+        <button type="submit" id="submitAndRedirectBtn">確認</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script>
+        function checkVaild(obj, msg) {
+            var input = obj;
+            const validityState = input.validity;
+            if (validityState.valueMissing) {
+                input.setCustomValidity(msg);
+            } else if (validityState.rangeUnderflow) {
+                input.setCustomValidity("Thats too low!");
+            } else if (validityState.rangeOverflow) {
+                input.setCustomValidity("Thats too high!");
+            } else {
+                input.setCustomValidity("");
+            }
+
+            //console.log(input);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    />
+    <link
+      id="u-page-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <title>登入</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-container container">
+          <h1 class="logo">水中菜園奇幻之旅：魚你一起 活出精菜</h1>
+        </div>
+      </nav>
+    </header>
+
+    <form id="myForm" action="/login" method="post">
+      <h2>登入</h2>
+
+      <fieldset>
+        <label for="Login_account">帳號</label>
+        <input
+          type="text"
+          id="Login_account"
+          name="Login_account"
+          placeholder="請輸入帳號"
+          minlength="2"
+          oninput="checkVaild(this, '請輸入帳號');"
+          required="required"
+        />
+
+        <label for="password">密碼</label>
+        <input
+          type="password"
+          id="Login_password"
+          name="Login_password"
+          placeholder="格式:含英數至少六個字元"
+          pattern="^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$"
+          required="required"
+          oninput="checkVaild(this, '含英數至少六個字元');"
+        />
+      </fieldset>
+      <button type="submit" id="submitAndRedirectBtn">確認</button>
+      <a
+        href="#"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#loginModal"
+        >沒有帳號？</a
+      >
+    </form>
+
+    <!-- 按鈕 -->
+    <form id="sign_up_Form" action="/submit" method="post">
+      <!-- 跳出視窗內容 -->
+
+      <div class="modal fade" id="loginModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+              <h3>註冊</h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <!-- Body -->
+            <div class="modal-body">
+              <!-- 登入表單 -->
+              <form id="sing-up_form">
+                <!-- name -->
+                <div>
+                  <label for="user_name">姓名</label>
+                  <input
+                    type="text"
+                    class="name form-control"
+                    placeholder="請輸入姓名"
+                    id="user_name"
+                    name="user_name"
+                    required="required"
+                    minlength="2"
+                    oninput="checkVaild(this, '請輸入姓名');"
+                  />
+                </div>
+                <!-- email -->
+                <div class="form-group">
+                  <label for="user_email">電子郵件</label>
+                  <input
+                    type="email"
+                    class="email form-control"
+                    placeholder="請輸入電子郵件"
+                    id="user_email"
+                    name="user_email"
+                    required="required"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    oninput="checkVaild(this, '請輸入電子郵件');"
+                  />
+                </div>
+                <!-- gender -->
+                <div>
+                  <label for="user_gender">性別</label>
+                  <input
+                    type="radio"
+                    id="male"
+                    value="male"
+                    name="gender"
+                    required="required"
+                  /><label for="男性" class="light">男性</label>
+                  <input
+                    type="radio"
+                    id="female"
+                    value="female"
+                    name="gender"
+                    required="required"
+                  /><label for="女性" class="light">女性</label>
+                  <input
+                    type="radio"
+                    id="other"
+                    value="other"
+                    name="gender"
+                    required="required"
+                  /><label for="不公開" class="light">不公開</label>
+                </div>
+                <!-- account -->
+                <div class="div">
+                  <label for="Singup_account">帳號</label>
+                  <input
+                    type="text"
+                    id="Singup_account"
+                    name="Singup_account"
+                    placeholder="請輸入帳號"
+                    required="required"
+                    minlength="2"
+                    oninput="checkVaild(this, '請輸入帳號');"
+                  />
+                </div>
+                <!-- password -->
+                <div class="form-group">
+                  <label for="Signup_password">密碼</label>
+                  <input
+                    type="password"
+                    id="signup_password"
+                    name="signup_password"
+                    class="password form-control"
+                    placeholder="格式：含英數至少六個字元"
+                    pattern="^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$"
+                    required="required"
+                    oninput="setCustomValidity('');"
+                    oninvalid="setCustomValidity('請輸入正確的密碼格式:含英數至少六個字元');"
+                  />
+                </div>
+                <!-- password2 -->
+                <div class="form-group">
+                  <label for="Singup_password2">確認密碼</label>
+                  <input
+                    type="password"
+                    id="Singup_password2"
+                    name="Singup_password2"
+                    class="password form-control"
+                    placeholder="請再次輸入密碼"
+                    required="required"
+                    oninput="setCustomValidity('');"
+                    onchange="if(document.getElementById('signup_password').value != document.getElementById('Singup_password2').value){setCustomValidity('密碼不吻合');}"
+                  />
+                </div>
+                <!-- 送出按鈕 -->
+                <button type="submit" class="btn btn-info" id="Sign-Up">
+                  註冊
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.js"
+      integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function checkVaild(obj, msg) {
+        var input = obj;
+        const validityState = input.validity;
+        if (validityState.valueMissing) {
+          input.setCustomValidity(msg);
+        } else if (validityState.rangeUnderflow) {
+          input.setCustomValidity("Thats too low!");
+        } else if (validityState.rangeOverflow) {
+          input.setCustomValidity("Thats too high!");
+        } else {
+          input.setCustomValidity("");
+        }
+
+        //console.log(input);
+      }
+    </script>
+  </body>
+</html>
